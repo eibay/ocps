@@ -1,27 +1,29 @@
-<h4>Products Listing</h4>
+<h4>Marketplace</h4>
 
-<table class="bordered highlight centered sortable">
-  <thead>
-    <tr>
-      <th>Item Name</th>
-      <th>Unit Price</th>
-      <th>Promotion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |item| %>
-    <tr>
-      <td><%= item["name"] %></td>
-      <td><%= humanized_money_with_symbol(item["unit_price"]) %></td>
-      <% if item["special_qty"] %>
-        <td><%= "#{item["special_qty"]} for " + humanized_money_with_symbol(item["special_price"]).to_s %></td>
-      <% else %>
-        <td></td>
+<div class="row">
+  <h5>Shopping Items</h5>
+  <table class="bordered highlight centered sortable">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Unit Price</th>
+        <th>Promotion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |item| %>
+      <tr>
+        <td><%= item["name"] %></td>
+        <td><%= humanized_money_with_symbol(item["unit_price"]) %></td>
+        <% if item["special_qty"] %>
+          <td><%= "#{item["special_qty"]} for " + humanized_money_with_symbol(item["special_price"]).to_s %></td>
+        <% else %>
+          <td></td>
+        <% end %>
+      </tr>
       <% end %>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </tbody>
+  </table>
+</div>
 
 
