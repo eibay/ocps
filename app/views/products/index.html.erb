@@ -1,0 +1,10 @@
+<h2>Products Listing</h2>
+
+
+<ul>
+  <% @products["prices"].each do |item| %>
+  <li><%= "#{item["name"]} : #{item["unit_price"]}"  %> </li>
+  <% end %>
+</ul>
+
+
