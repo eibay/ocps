@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
-    pricelist = HTTParty.get('https://api.myjson.com/bins/gx6vz')
-    @products = JSON.parse(pricelist.body)
+    response = HTTParty.get('https://api.myjson.com/bins/gx6vz')
+    data = JSON.parse(response.body)
+    @products = data["prices"]
   end
 end
