@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
-  
-  before_action :get_pricelist, only: [:index]
+  before_action :get_pricelist, only: [:index, :show]
   
   def index
     @products
   end
 
   def show
-    find_item(name)
+    find_item(params[:data_value].to_i)
+    @product
   end
 
   private
@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
       data = JSON.parse(response.body)
       @products = data["prices"]
     end
-    def find_item(name)
-      @product = @products[name]
+    def find_item(id)
+      @product = @products[id]
     end
 end

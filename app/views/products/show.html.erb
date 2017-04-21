@@ -1,2 +1,15 @@
 <h3>Product Detail</h3>
 
+<p>Product Name: <%= @product["name"] %></p>
+<p>Unit Price: <%= @product["unit_price"] %></p>
+Promotion:
+<p><% if @product["special_qty"] %>
+  <%= "#{@product["special_qty"]} for " + humanized_money_with_symbol(@product["special_price"]).to_s %>
+<% else %>
+  <%= "none" %>
+<% end %></p>
+
+<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+  <i class="material-icons right">send</i>
+</button>
+
