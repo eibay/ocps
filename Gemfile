@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'httparty'
 gem 'materialize-sass'
+gem 'font-awesome-sass'
 gem 'money-rails'
 
 group :development, :test do
