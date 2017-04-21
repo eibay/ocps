@@ -11,8 +11,8 @@
       </tr>
     </thead>
     <tbody>
-      <% @products.each do |item| %>
-      <tr>
+      <% @products.each_with_index do |item, index|  %>
+      <tr class="products-row" id=<%= "#{index + 1}" %>>
         <td><%= item["name"] %></td>
         <td><%= humanized_money_with_symbol(item["unit_price"]) %></td>
         <% if item["special_qty"] %>
@@ -23,6 +23,9 @@
       </tr>
       <% end %>
     </tbody>
+    <script>
+      selectProduct();
+    </script>
   </table>
 </div>
 
